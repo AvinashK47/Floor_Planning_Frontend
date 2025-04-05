@@ -36,45 +36,68 @@ function StableDiffusionPage() {
         <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
           <h2 class="text-3xl font-bold mb-6 text-cyan-300">Overview</h2>
           <p class="text-white/90 mb-6 text-lg">
-            StableDiffusion is a latent text-to-image diffusion model capable of
-            generating photo-realistic images given any text input. It's
-            particularly effective for architectural visualization and floor
-            plan generation due to its strong spatial understanding and
-            realistic rendering capabilities.
+            The Fused Stable Diffusion and ControlNet Model combines the
+            creative power of latent diffusion with precise structural control
+            mechanisms. This hybrid approach enables the generation of visually
+            rich floor plans that balance aesthetic quality with architectural
+            feasibility, providing both creative design elements and structural
+            coherence.
           </p>
-
-          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
-            <img
-              src="https://placehold.co/800x450/222/fff?text=StableDiffusion+Example"
-              alt="StableDiffusion Example"
-              class="w-full h-full object-cover"
-            />
-          </div>
 
           <h3 class="text-2xl font-semibold mb-4 text-cyan-100">
             Key Capabilities
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-6 text-lg">
             <li>
-              Generates highly detailed and realistic floor plans with accurate
-              proportions
+              Creates visually detailed floor plans with photorealistic textures
+              and materials
             </li>
             <li>
-              Excellent at rendering textures, materials, and lighting for
-              architectural visualization
+              Maintains structural integrity through ControlNet spatial
+              conditioning
             </li>
             <li>
-              Maintains spatial coherence and architectural feasibility in
-              generated layouts
+              Generates both 2D floor plans and 3D architectural visualizations
             </li>
             <li>
-              Adapts to specific architectural styles and design preferences
+              Accurately represents complex architectural features and details
             </li>
             <li>
-              Handles complex spatial relationships and room arrangements
-              effectively
+              Adapts to various architectural styles while maintaining
+              structural feasibility
             </li>
           </ul>
+        </section>
+
+        {/* Model Architecture Section */}
+        <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
+          <h2 class="text-3xl font-bold mb-6 text-cyan-300">
+            Model Architecture
+          </h2>
+          <p class="text-white/90 mb-6 text-lg">
+            Our fused model architecture integrates a fine-tuned Stable
+            Diffusion v2 backbone with multiple specialized ControlNet
+            conditioning modules. This unique combination allows for granular
+            spatial control while preserving the creative capabilities of the
+            base diffusion model.
+          </p>
+
+          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
+            <img
+              src="../../public/ArchitectureImg/stable diffusion controlnet model architecture.jpg"
+              alt="Stable Diffusion Model Architecture"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <p class="text-white/90 mb-6 text-lg">
+            The system uses a multi-stage pipeline where textual descriptions
+            are first processed by a specialized architectural tokenizer, then
+            spatial layouts are generated and refined using the ControlNet
+            modules. The Stable Diffusion component adds aesthetic details,
+            materials, and lighting effects while respecting the underlying
+            structural guidance from ControlNet.
+          </p>
         </section>
 
         {/* Technical Specifications Section */}
@@ -84,33 +107,31 @@ function StableDiffusionPage() {
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">
-                Model Architecture
-              </h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Base Models</h4>
               <p class="text-white/90">
-                Latent diffusion model with transformer text encoder and U-Net
-                backbone
+                Stable Diffusion v2.1 with multiple architectural ControlNet
+                modules
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">
-                Training Dataset
-              </h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Training Dataset</h4>
               <p class="text-white/90">
-                LAION-5B with architectural and interior design focus
+                3.2M architectural images and floor plans with comprehensive
+                style annotations
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Resolution</h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Output Resolution</h4>
               <p class="text-white/90">
-                512x512 native, with upscaling capabilities to 2048x2048
+                768×768 native with upscaling to 2048×2048 for detailed
+                visualizations
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Fine-tuning</h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Control Mechanisms</h4>
               <p class="text-white/90">
-                Specialized for architectural visualization and floor plan
-                generation
+                Multi-level conditioning for structure, style, materials, and
+                spatial arrangement
               </p>
             </div>
           </div>
@@ -127,16 +148,20 @@ function StableDiffusionPage() {
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-8 text-lg">
             <li>
-              Be specific about spatial relationships and dimensions in your
-              prompts
+              Describe both spatial arrangements and desired visual aesthetics
             </li>
             <li>
-              Include details about materials, lighting, and architectural style
+              Specify preferred architectural style (Modern, Traditional,
+              Industrial, etc.)
             </li>
-            <li>Use architectural terminology for more precise results</li>
+            <li>Mention desired materials, textures, and finish qualities</li>
             <li>
-              Specify the perspective (top-down, isometric, etc.) for better
-              floor plan clarity
+              Indicate lighting preferences (natural light, ambient, accent
+              lighting)
+            </li>
+            <li>
+              Request specific visualization angle (top-down, isometric,
+              eye-level)
             </li>
           </ul>
 
@@ -146,16 +171,20 @@ function StableDiffusionPage() {
           <div class="space-y-4 mb-8">
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "Modern minimalist open-concept floor plan with living room,
-                kitchen, and dining area. Natural light from floor-to-ceiling
-                windows. Concrete floors and white walls."
+                "Design a modern Scandinavian-inspired open floor plan with
+                light oak flooring, white walls, and abundant natural light.
+                Include a kitchen with island that flows into the dining and
+                living areas. Large windows should face the main living space.
+                Show in isometric view with warm evening lighting."
               </p>
             </div>
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "Traditional Japanese home floor plan with tatami rooms, sliding
-                paper doors, central courtyard garden, and engawa veranda.
-                Top-down view."
+                "Create a traditional Japanese floor plan with tatami rooms,
+                sliding shoji doors, and engawa corridor wrapping around a
+                central courtyard garden. Use natural materials including
+                cypress wood and stone. Show a top-down view with architectural
+                detailing and precise room divisions."
               </p>
             </div>
           </div>
@@ -163,9 +192,12 @@ function StableDiffusionPage() {
           <div class="p-6 bg-cyan-900/30 rounded-lg border-l-4 border-cyan-400">
             <h4 class="font-bold mb-2 text-xl text-cyan-100">Pro Tip</h4>
             <p class="text-white/90">
-              For the most accurate floor plans, include both functional
-              requirements (number and types of rooms) and aesthetic preferences
-              (materials, colors, lighting) in your prompt.
+              This model excels at visualizing the finished appearance of
+              spaces. When writing prompts, divide your description between
+              spatial arrangement (room layout, sizes, adjacencies) and visual
+              aesthetics (materials, lighting, style). For the most visually
+              striking results, include atmospheric details like time of day,
+              lighting conditions, and material finishes.
             </p>
           </div>
         </section>

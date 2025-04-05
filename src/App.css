@@ -15,7 +15,7 @@
 /* Radial */
 
 .bg-gradient-animated {
-  background: radial-gradient(circle at center, #0a888c 0%, #ffffff 100%);
+  background: radial-gradient(circle at center, #0b7b7f 0%, #cee7e2 100%);
   background-size: 200% 200%;
   animation: radialGradientAnimation 7s ease infinite alternate;
 }
@@ -191,5 +191,16 @@
     100% {
         background-position: 100% 50%;
     }
+}
+
+/* Add this at the end of your existing CSS */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
 }
 

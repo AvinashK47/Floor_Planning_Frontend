@@ -36,39 +36,41 @@ function MidjourneyPage() {
         <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
           <h2 class="text-3xl font-bold mb-6 text-cyan-300">Overview</h2>
           <p class="text-white/90 mb-6 text-lg">
-            Midjourney is an independent AI that creates images from textual
-            descriptions, known for its artistic style. For floor plan
-            generation, Midjourney excels at creating visually stunning and
-            atmospheric architectural visualizations with strong aesthetic
-            qualities.
+            The Gemini with Matplotlib Floor Planner is a specialized AI system that combines Google's Gemini large language model with precise programmatic visualization capabilities. Unlike image diffusion models, this approach generates vector-based floor plans with exact measurements, properly labeled rooms, and architectural accuracy.
           </p>
-
-          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
-            <img
-              src="https://placehold.co/800x450/222/fff?text=Midjourney+Example"
-              alt="Midjourney Example"
-              class="w-full h-full object-cover"
-            />
-          </div>
 
           <h3 class="text-2xl font-semibold mb-4 text-cyan-100">
             Key Capabilities
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-6 text-lg">
-            <li>
-              Creates visually stunning and artistic architectural
-              visualizations
-            </li>
-            <li>
-              Excels at atmospheric quality, lighting, and mood in rendered
-              spaces
-            </li>
-            <li>Strong at depicting material textures and finish qualities</li>
-            <li>
-              Excellent at environmental context and landscape integration
-            </li>
-            <li>Unique artistic interpretation of architectural concepts</li>
+            <li>Generates dimensionally accurate floor plans with precise measurements</li>
+            <li>Creates clear, clean vector graphics with proper architectural annotations</li>
+            <li>Adheres strictly to building codes and spatial requirements</li>
+            <li>Provides detailed room labeling and dimensioning</li>
+            <li>Offers both 2D blueprint-style outputs and simplified 3D visualizations</li>
           </ul>
+        </section>
+
+        {/* Model Architecture Section */}
+        <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
+          <h2 class="text-3xl font-bold mb-6 text-cyan-300">
+            Model Architecture
+          </h2>
+          <p class="text-white/90 mb-6 text-lg">
+            Our Gemini with Matplotlib Floor Planner uses a unique pipeline approach that leverages the power of Google's advanced Gemini multimodal model combined with the precision of programmatic drawing. This hybrid system translates natural language requirements into structured architectural specifications.
+          </p>
+
+          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
+            <img
+              src="../../public/ArchitectureImg/Gemini matplotlib model architecture.jpg"
+              alt="Gemini with Matplotlib Architecture"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <p class="text-white/90 mb-6 text-lg">
+            The architecture first uses Gemini to interpret user requirements and convert them into a detailed spatial program. This structured representation is then used to generate Python code that utilizes Matplotlib's precision drawing functions to create accurate, scalable, and fully annotated floor plans that adhere to architectural standards.
+          </p>
         </section>
 
         {/* Technical Specifications Section */}
@@ -78,33 +80,27 @@ function MidjourneyPage() {
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">
-                Model Architecture
-              </h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Base Models</h4>
               <p class="text-white/90">
-                Proprietary diffusion-based system with artistic enhancement
-                layers
+                Google Gemini 1.5 Pro with custom Matplotlib code generation module
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">
-                Training Dataset
-              </h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Knowledge Base</h4>
               <p class="text-white/90">
-                Artistic imagery with strong emphasis on architectural
-                photography and rendering
+                Architectural standards, building codes, and spatial planning principles
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Resolution</h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Output Format</h4>
               <p class="text-white/90">
-                Variable resolution options with aspect ratio control
+                Scalable vector graphics with measurement annotations and room labels
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Fine-tuning</h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Customization</h4>
               <p class="text-white/90">
-                Specialized for aesthetic quality and artistic interpretation
+                Fine-grained control over dimensions, room placement, and architectural detailing
               </p>
             </div>
           </div>
@@ -120,19 +116,11 @@ function MidjourneyPage() {
             Best Practices
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-8 text-lg">
-            <li>
-              Include specific artistic references and visual inspirations in
-              your prompts
-            </li>
-            <li>Be detailed about lighting conditions, atmosphere, and mood</li>
-            <li>
-              Specify camera angle and perspective for architectural
-              visualizations
-            </li>
-            <li>
-              Use artistic and stylistic descriptors (e.g., "cinematic,"
-              "dramatic," "serene")
-            </li>
+            <li>Be specific about exact dimensions and measurements when possible</li>
+            <li>Indicate preferred wall thicknesses and construction standards</li>
+            <li>Specify desired room sizes in square meters or square feet</li>
+            <li>Include any building code requirements or accessibility needs</li>
+            <li>Request specific annotation styles if needed (dimensions, labels, etc.)</li>
           </ul>
 
           <h3 class="text-2xl font-semibold mb-4 text-cyan-100">
@@ -141,18 +129,12 @@ function MidjourneyPage() {
           <div class="space-y-4 mb-8">
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "Atmospheric rendering of a minimalist beach house interior.
-                Golden hour sunlight streaming through floor-to-ceiling windows.
-                Natural wood and white surfaces. Cinematic wide-angle view
-                showing open plan living and ocean vista."
+                "Create an ADA-compliant office floor plan for a 40' × 60' space with reception area (100 sq ft), 3 private offices (120 sq ft each), conference room (200 sq ft), break room (150 sq ft), and accessible restrooms. Include proper door swings and 5' turning radius in key areas."
               </p>
             </div>
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "Isometric architectural visualization of a multi-level urban
-                garden apartment. Lush greenery on every terrace. Brutalist
-                concrete structure softened by climbing plants. Morning mist.
-                Inspired by Tadao Ando's use of light and shadow."
+                "Design a 2000 sq ft single-family home with 3 bedrooms (one master with ensuite), 2 bathrooms, open kitchen/dining area, living room, and 2-car garage. Use standard 2×4 construction with 6" exterior walls. Include dimensions for all rooms and label appropriately."
               </p>
             </div>
           </div>
@@ -160,10 +142,7 @@ function MidjourneyPage() {
           <div class="p-6 bg-cyan-900/30 rounded-lg border-l-4 border-cyan-400">
             <h4 class="font-bold mb-2 text-xl text-cyan-100">Pro Tip</h4>
             <p class="text-white/90">
-              Midjourney works best when you provide specific artistic
-              references and detailed descriptions of materials and lighting.
-              Think like a cinematographer when writing your prompts for the
-              most stunning visualizations.
+              This model excels at technical precision. Provide specific dimensions, construction requirements, and code compliance needs for the most accurate and usable floor plans. You can request various output styles including blueprint-style plans, basic 3D views, or annotated technical drawings.
             </p>
           </div>
         </section>

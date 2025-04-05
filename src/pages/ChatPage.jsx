@@ -7,6 +7,7 @@ import ChatInput from "../components/ChatInput";
 import { generateFloorPlan, getModelApiKey } from "../services/chatApiService";
 
 function ChatPage() {
+  
   // State management (remains the same)
   const [conversations, setConversations] = useState([]);
   const [activeConversation, setActiveConversation] = useState(null);
@@ -139,6 +140,7 @@ function ChatPage() {
       handleSendMessage();
     }
   };
+  
 
   return (
     <div class="flex h-screen bg-gradient-animated text-white">

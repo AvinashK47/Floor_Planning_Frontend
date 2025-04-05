@@ -36,39 +36,68 @@ function DallEPage() {
         <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
           <h2 class="text-3xl font-bold mb-6 text-cyan-300">Overview</h2>
           <p class="text-white/90 mb-6 text-lg">
-            DALL-E is an AI system by OpenAI that creates realistic images and
-            art from natural language descriptions. In the context of floor plan
-            generation, DALL-E excels at creative interpretations and innovative
-            layouts that push beyond traditional architectural constraints.
+            The Multi Modal Text to Image Generator is an advanced AI system
+            that processes both textual descriptions and spatial constraints
+            simultaneously. Unlike traditional text-to-image models, it can
+            understand architectural concepts, spatial relationships, and design
+            principles to generate floor plans that satisfy multiple
+            requirements at once.
           </p>
-
-          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
-            <img
-              src="https://placehold.co/800x450/222/fff?text=DALL-E+Example"
-              alt="DALL-E Example"
-              class="w-full h-full object-cover"
-            />
-          </div>
 
           <h3 class="text-2xl font-semibold mb-4 text-cyan-100">
             Key Capabilities
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-6 text-lg">
-            <li>Generates creative and unconventional floor plan concepts</li>
             <li>
-              Excellent at interpretative design based on aesthetic preferences
+              Processes multiple input modalities including text, room
+              relationships, and sizing constraints
             </li>
             <li>
-              Capable of blending different architectural styles and influences
+              Resolves complex spatial requirements and optimizes floor space
+              efficiency
             </li>
             <li>
-              Strong at visualizing conceptual spaces described in abstract
-              terms
+              Balances aesthetic considerations with practical functionality
             </li>
             <li>
-              Creates unique solutions for challenging spatial constraints
+              Adapts to specific architectural styles while maintaining
+              structural coherence
+            </li>
+            <li>
+              Generates practical solutions for challenging spatial limitations
+              and odd-shaped spaces
             </li>
           </ul>
+        </section>
+
+        {/* Model Architecture Section */}
+        <section class="mb-16 relative pl-5 border-l-4 border-cyan-500/30">
+          <h2 class="text-3xl font-bold mb-6 text-cyan-300">
+            Model Architecture
+          </h2>
+          <p class="text-white/90 mb-6 text-lg">
+            Our Multi Modal Text to Image Generator is built on a
+            transformer-based architecture with specialized attention mechanisms
+            for spatial reasoning. The model processes architectural
+            requirements through parallel pathways, combining traditional image
+            generation capabilities with structural understanding.
+          </p>
+
+          <div class="aspect-video w-full rounded-lg mb-8 overflow-hidden shadow-lg border border-white/10">
+            <img
+              src="../../public/ArchitectureImg/multi modal model architecture.jpg"
+              alt="Multi Modal Generator Architecture"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <p class="text-white/90 mb-6 text-lg">
+            The architecture features a multi-head cross-attention system that
+            allows text prompts, spatial constraints, and design preferences to
+            influence each stage of the diffusion process. This enables precise
+            control over room placement, proportions, and adjacency while
+            maintaining a holistic view of the entire floor plan.
+          </p>
         </section>
 
         {/* Technical Specifications Section */}
@@ -78,33 +107,33 @@ function DallEPage() {
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">
-                Model Architecture
-              </h4>
+              <h4 class="font-medium mb-2 text-cyan-100">Base Architecture</h4>
               <p class="text-white/90">
-                Transformer-based text-to-image generation with diffusion
-                components
+                Extended latent diffusion model with multi-pathway
+                cross-attention
+              </p>
+            </div>
+            <div class="bg-black/20 p-4 rounded-lg">
+              <h4 class="font-medium mb-2 text-cyan-100">Training Data</h4>
+              <p class="text-white/90">
+                Diverse dataset of 2.8M floor plans with architectural
+                annotations and specifications
+              </p>
+            </div>
+            <div class="bg-black/20 p-4 rounded-lg">
+              <h4 class="font-medium mb-2 text-cyan-100">Output Resolution</h4>
+              <p class="text-white/90">
+                1024×1024 native with option for higher resolution outputs via
+                tiling
               </p>
             </div>
             <div class="bg-black/20 p-4 rounded-lg">
               <h4 class="font-medium mb-2 text-cyan-100">
-                Training Dataset
+                Conditioning Control
               </h4>
               <p class="text-white/90">
-                Diverse image-text pairs with emphasis on creative design
-                concepts
-              </p>
-            </div>
-            <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Resolution</h4>
-              <p class="text-white/90">
-                1024x1024 native resolution with various aspect ratio options
-              </p>
-            </div>
-            <div class="bg-black/20 p-4 rounded-lg">
-              <h4 class="font-medium mb-2 text-cyan-100">Fine-tuning</h4>
-              <p class="text-white/90">
-                Optimized for creative interpretation and concept generation
+                Multi-level conditioning for spatial geometry, style, materials,
+                and dimensions
               </p>
             </div>
           </div>
@@ -121,20 +150,18 @@ function DallEPage() {
           </h3>
           <ul class="list-disc list-outside ml-6 text-white/90 space-y-3 mb-8 text-lg">
             <li>
-              Use descriptive, conceptual language to inspire creative
-              interpretations
+              Describe both functional requirements and desired aesthetic
+              qualities
             </li>
             <li>
-              Focus on the feeling and atmosphere you want the space to evoke
+              Specify crucial room adjacencies (e.g., "kitchen next to dining
+              room")
             </li>
             <li>
-              Provide aesthetic references (e.g., "inspired by Bauhaus" or "like
-              a forest cabin")
+              Include approximate dimensions or area constraints when applicable
             </li>
-            <li>
-              Be open to unexpected and innovative solutions in the generated
-              designs
-            </li>
+            <li>Mention any special features or architectural elements</li>
+            <li>Use rich descriptive language for materials and finishes</li>
           </ul>
 
           <h3 class="text-2xl font-semibold mb-4 text-cyan-100">
@@ -143,16 +170,20 @@ function DallEPage() {
           <div class="space-y-4 mb-8">
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "A flowing, organic living space that blends indoor and outdoor
-                environments. Inspired by Antoni Gaudí with curved walls,
-                natural materials, and a central atrium filled with plants."
+                "Design a modern open-concept apartment, approximately 75 square
+                meters. Include one bedroom, one bathroom, a home office nook,
+                and an open kitchen-living area. Maximize natural light with
+                large windows, and use a minimalist aesthetic with concrete
+                floors and white walls."
               </p>
             </div>
             <div class="bg-black/30 p-4 rounded-lg">
               <p class="text-white/90 font-medium">
-                "Futuristic micro-apartment floor plan optimized for digital
-                nomads. Multi-functional furniture, smart home integration, and
-                transformable spaces. Cyberpunk aesthetic with neon accents."
+                "Create a family home with 3 bedrooms, 2 bathrooms, a large
+                kitchen with island connected to the dining area, a separate
+                living room, and a mudroom entrance from the garage. The primary
+                bedroom should have an ensuite bathroom and walk-in closet.
+                Style should be transitional with warm neutral tones."
               </p>
             </div>
           </div>
@@ -160,9 +191,10 @@ function DallEPage() {
           <div class="p-6 bg-cyan-900/30 rounded-lg border-l-4 border-cyan-400">
             <h4 class="font-bold mb-2 text-xl text-cyan-100">Pro Tip</h4>
             <p class="text-white/90">
-              DALL-E shines when you describe the experience you want to create
-              rather than just the physical elements. Try focusing on how you
-              want to feel in the space for more innovative designs.
+              This model excels when given a mix of specific spatial
+              requirements and creative freedom. Try to balance structure (room
+              counts, adjacencies) with stylistic guidance to get the most
+              innovative yet practical floor plans.
             </p>
           </div>
         </section>

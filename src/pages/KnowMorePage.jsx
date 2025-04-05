@@ -16,7 +16,8 @@ function KnowMorePage() {
       ],
       bestFor: "Realistic designs",
       path: "/models/stable-diffusion",
-      image: "https://placehold.co/600x400/222/fff?text=StableDiffusion",
+      image:
+        "../../public/logos/stable diffusion and controlnet model logo.jpeg",
     },
     {
       id: "dall-e",
@@ -30,7 +31,7 @@ function KnowMorePage() {
       ],
       bestFor: "Creative concepts",
       path: "/models/dall-e",
-      image: "https://placehold.co/600x400/222/fff?text=DALL-E",
+      image: "../../public/logos/multi modal logo.jpeg",
     },
     {
       id: "midjourney",
@@ -44,7 +45,8 @@ function KnowMorePage() {
       ],
       bestFor: "Artistic visualizations",
       path: "/models/midjourney",
-      image: "https://placehold.co/600x400/222/fff?text=Midjourney",
+      image:
+        "../../public/logos/gemini matplotlib model logo.jpeg",
     },
   ];
 
@@ -81,9 +83,7 @@ function KnowMorePage() {
 
               {/* Card Content */}
               <div class="p-6">
-                <h2 class="text-2xl font-bold mb-2 text-white">
-                  {model.name}
-                </h2>
+                <h2 class="text-2xl font-bold mb-2 text-white">{model.name}</h2>
                 <p class="text-white/80 mb-4 line-clamp-2">
                   {model.description}
                 </p>
@@ -126,31 +126,6 @@ function KnowMorePage() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Compare Models Section */}
-        <div class="mt-16 bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold mb-4 text-center">
-            Compare Models
-          </h2>
-          <p class="text-white/80 mb-6 text-center">
-            Each model has unique strengths. Learn more about each to find the
-            best fit for your project.
-          </p>
-
-          <div class="flex justify-center">
-            <button class="bg-white text-gray-900 hover:bg-gray-100 font-medium py-2 px-6 rounded-lg transition-colors flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-5 h-5"
-              >
-                <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
-              </svg>
-              <span>View Comparison Chart</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>
